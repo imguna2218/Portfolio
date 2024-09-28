@@ -6,30 +6,29 @@ import { faHome, faInfoCircle, faProjectDiagram, faEnvelope } from '@fortawesome
 import './custom.css'; // Import the custom CSS file
 import logo from './logo.jpg'
 import { GiHamburgerMenu } from "react-icons/gi";
-import { motion } from 'framer-motion';
 // import { HashLink } from 'react-router-hash-link';
 
 const Header = () => {
   const [show, setShow] = useState(window.innerWidth < 768 ? false : true);
   return (
-    <motion.div className="w-full h-16 fixed top-0 left-0 z-50 diagonal-gradient flex justify-between items-center px-5"
+    <div className="w-full h-16 fixed top-0 left-0 z-50 diagonal-gradient flex justify-between items-center px-5"
       initial={{ y: "-100vh" }}
       animate={{ y: 0 }}
       transition={{ delay: 0.2, duration: 0.3, type: 'spring', stiffness: 80 }}
     >
-      <motion.div className="logo"
+      <div className="logo"
         initial={{ x: '-100vw' }}
         animate={{ x: 0 }}
         transition={{ delay: 0.5, duration: 0.2, type: 'spring', stiffness: 10 }}
       >
         <img src={logo} alt="Logo" className="h-20" />
-      </motion.div>
+      </div>
       <div className="navs">
         <div onClick={() => setShow(!show)} className="mt-5 absolute top-0 right-3  md:hidden text-3xl"><GiHamburgerMenu /></div>
 
         {
           show &&
-          <motion.ul id='navbarelements' className="mt-[13rem] md:mt-0 flex md:flex-row flex-col list-none"
+          <ul id='navbarelements' className="mt-[13rem] md:mt-0 flex md:flex-row flex-col list-none"
             initial={{ x: '100vw' }}
             animate={{ x: 0 }}
             transition={{ delay: 0.5, duration: 0.2, type: 'spring', stiffness: 10 }}
@@ -67,10 +66,10 @@ const Header = () => {
               </li>
             </a>
 
-          </motion.ul>
+          </ul>
         }
       </div>
-    </motion.div >
+    </div >
   );
 };
 
