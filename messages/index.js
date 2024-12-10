@@ -13,9 +13,13 @@ app.use(cors({
   methods: ['GET', 'POST'],
 }));
 
+require('dotenv').config();
 // Twilio credentials (sign up at Twilio and get these from your account)
-const accountSid = 'AC186dc02f4cf9ce2612657e94298ea836';
-const authToken = 'your_auth_token';
+// Import dotenv
+
+const accountSid = process.env.TWILIO_ACCOUNT_SID;
+const authToken = process.env.TWILIO_AUTH_TOKEN;
+
 const twilioClient = twilio(accountSid, authToken);
 
 // WhatsApp sending function
