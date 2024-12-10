@@ -1,0 +1,49 @@
+const express = require('express');
+const twilio = require('twilio');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+
+const app = express();
+const port = 5000;
+
+// Middleware
+app.use(bodyParser.json());
+app.use(cors({
+  origin: 'http://localhost:5173',
+  methods: ['GET', 'POST'],
+}));
+
+// Twilio credentials (sign up at Twilio and get these from your account)
+const accountSid = 'AC186dc02f4cf9ce2612657e94298ea836';
+const authToken = 'your_auth_token';
+const twilioClient = twilio(accountSid, authToken);
+
+// WhatsApp sending function
+const sendWhatsappMessage = async (to, message) => {
+  try {
+    const messageResponse = await twilioClient.messages.create({
+      from: 'whatsapp:+14155238886', // Twilio sandbox WhatsApp number
+      to: `whatsapp:${to}`,  // user's number in WhatsApp format
+      body: message,
+    });
+    return messageResponse;
+  } catch (error) {
+    throw new Error('Failed to send WhatsApp message: ' + error.message);
+  }
+};
+
+// POST route to send WhatsApp message
+app.post('/send-whatsapp', async (req, res) => {
+  const { phoneNumber, message } = req.body;
+
+  try {
+    const messageResponse = await sendWhatsappMessage(phoneNumber, message);
+    res.status(200).json({ success: true, message: messageResponse });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
+});

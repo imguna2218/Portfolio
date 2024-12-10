@@ -1,0 +1,152 @@
+@media screen and (max-width: 600px) {
+
+  #navbarelements {
+    background-color: black;
+    padding: 15px;
+  }
+
+  #homepart {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #nameAndText {
+    width: 100%;
+  }
+
+  #nameAndText img {
+    order: 2;
+  }
+
+  #homeimage {
+    height: 600px;
+    width: 430px;
+  }
+
+  #div1 {
+    margin-top: 80px;
+  }
+
+  #aboutpart {
+    height: auto;
+  }
+
+  #mainContent {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #contentDiv {
+    order: 1;
+    padding: 0px;
+  }
+
+  #imageDiv {
+    order: 2;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #actualImageDiv {
+    width: 80%;
+    height: 300px;
+    padding: 0;
+  }
+
+  #imageDiv img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #abtcontent {
+    width: 100%;
+    padding: 20px;
+  }
+
+  #abouth1 {
+    text-align: center;
+    font-size: 40px;
+  }
+
+  #findMeIcons {
+    margin-bottom: 50px;
+  }
+
+  #projectTitle {
+    margin-top: 50px;
+  }
+
+  .projectblock {
+    width: 300px;
+  }
+
+  #projectpart {
+    height: auto;
+  }
+
+  .scrollprojects {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  #knowmepart {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0;
+  }
+
+  #knowmepart {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .knowcontent {
+    width: 100%;
+    /* Ensure full width */
+    /* Add some padding */
+    box-sizing: border-box;
+    /* Include padding in width calculation */
+  }
+
+  .knowimage {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .knowimage img {
+    width: 200px;
+    /* Adjusted size for mobile */
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .knowtitle {
+    text-align: center;
+  }
+
+  .quote {
+    font-size: 5px;
+  }
+
+  #contactpart {
+    height: auto;
+  }
+
+  .footertxt {
+    font-size: 3px;
+    margin: 5px;
+  }
+
+
+}

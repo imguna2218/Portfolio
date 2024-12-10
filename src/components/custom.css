@@ -1,0 +1,4 @@
+/* src/custom.css */
+.diagonal-gradient {
+  background: linear-gradient(45deg, rgba(163, 1, 1, 0.678), rgba(0, 0, 0, 0.673), rgba(18, 0, 72, 0.76));
+}
